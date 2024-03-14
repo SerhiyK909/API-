@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from star_wars_api import StarWarsApi
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+api_client = StarWarsApi()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+person = api_client.get_person(1)
+print(f"Person name: {person.name}")
+print(f"Person skin color: {person.skin_color}")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+planet = api_client.get_planet(2)
+print(f"Planet name: {planet.name}")
+print(f"Planet rotation_period: {planet.rotation_period}")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+starship = api_client.get_starship(3)
+print(f"starship name: {starship.name}")
+print(f"starship model: {starship.model}")
